@@ -1,29 +1,28 @@
 <?php
-// module/Album/view/album/album/index.phtml:
-
 $title = 'My albums';
 $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
 <p>
-    <a href="<?= $this->url('album', ['action' => 'add']) ?>">Add new album</a>
+    <a href="<?= $this->url('album', ['action' => 'add']) ?>"><img class="actionIcon" src="img/plus.png"> Add new album</a>
 </p>
 
 <table class="table">
 <tr>
-    <th>Title</th>
-    <th>Artist</th>
     <th>Image</th>
+    <th>Album</th>
+    <th>Artist</th>
     <th>&nbsp;</th>
 </tr>
 <?php foreach ($albums as $album) : ?>
     <tr>
+        <td><img class="albumImg" alt="Img pas trouvé" src="data:image/jpeg;base64, <?= $this->escapeHtml .base64_encode($album->img)?>"/></td>
         <td><?= $this->escapeHtml($album->title) ?></td>
         <td><?= $this->escapeHtml($album->artist) ?></td>
-        <td><img style="width: 100px;" alt="Img pas trouvé" src="data:image/jpeg;base64, <?= $this->escapeHtml .base64_encode($album->img)?>"/></td>
+
         <td>
-            <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>">Edit</a>
-            <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>">Delete</a>
+            <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/editer.png"></a>
+            <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/bin.png"></a>
         </td>
     </tr>
 <?php endforeach; ?>
