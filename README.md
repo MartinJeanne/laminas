@@ -2,5 +2,5 @@
 
 ## Hello
 
-$ composer install  
-$ php -S 0.0.0.0:8080 -t public
+`$ composer install`  
+`$ php -S 0.0.0.0:8080 -t public
