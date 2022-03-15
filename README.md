@@ -2,6 +2,8 @@
 
 ## Hello
 
+Go to your php.ini, and remove the semilocon on this line:
+`;extension=intl`
 
 Install project with Composer:  
 `$ composer install`  
