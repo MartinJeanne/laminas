@@ -32,7 +32,7 @@ class AlbumForm extends Form
             'name' => 'img',
             'type' => 'file',
             'options' => [
-                'label' => 'Img',
+                'label' => 'Image',
             ],
         ]);
         $this->add([

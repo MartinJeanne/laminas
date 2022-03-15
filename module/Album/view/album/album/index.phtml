@@ -8,16 +8,10 @@ $this->headTitle($title);
 </p>
 
 <table class="table">
-<tr>
-    <th>Image</th>
-    <th>Album</th>
-    <th>Artist</th>
-    <th>&nbsp;</th>
-</tr>
 <?php foreach ($albums as $album) : ?>
     <tr>
         <td><img class="albumImg" alt="Img pas trouvé" src="data:image/jpeg;base64, <?= $this->escapeHtml .base64_encode($album->img)?>"/></td>
-        <td><?= $this->escapeHtml($album->title) ?></td>
+        <td><b><?= $this->escapeHtml($album->title) ?></b></td>
         <td><?= $this->escapeHtml($album->artist) ?></td>
 
         <td>
