@@ -8,16 +8,19 @@ $this->headTitle($title);
 </p>
 
 <table class="table">
-<?php foreach ($albums as $album) : ?>
-    <tr>
-        <td><img class="albumImg" alt="Img pas trouvé" src="data:image/jpeg;base64, <?= $this->escapeHtml .base64_encode($album->img)?>"/></td>
-        <td><b><?= $this->escapeHtml($album->title) ?></b></td>
-        <td><?= $this->escapeHtml($album->artist) ?></td>
+    <?php foreach ($albums as $album) : ?>
+        <?php $img = $this->escapeHtml . base64_encode($album->img);
+        if ($img) $img = "data:image/jpeg;base64," . $img;
+        else $img = $this->basePath('img/disque.png'); ?>
+        <tr>
+            <td><img class="albumImg" alt="Img pas trouvé" src="<?= $img ?>" /></td>
+            <td><b><?= $this->escapeHtml($album->title) ?></b></td>
+            <td><?= $this->escapeHtml($album->artist) ?></td>
 
-        <td>
-            <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/editer.png"></a>
-            <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/bin.png"></a>
-        </td>
-    </tr>
-<?php endforeach; ?>
+            <td>
+                <a href="<?= $this->url('album', ['action' => 'edit', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/editer.png"></a>
+                <a href="<?= $this->url('album', ['action' => 'delete', 'id' => $album->id]) ?>"><img class="actionIcon" src="img/bin.png"></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
 </table>

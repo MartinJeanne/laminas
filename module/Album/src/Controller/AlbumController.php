@@ -44,7 +44,9 @@ class AlbumController extends AbstractActionController
 
         $album->exchangeArray($form->getData());
 
-        $album->img = file_get_contents($_FILES['img']['tmp_name']);
+        if ($_FILES['img']['tmp_name']) {
+            $album->img = file_get_contents($_FILES['img']['tmp_name']);
+        }
 
         $this->table->saveAlbum($album);
         return $this->redirect()->toRoute('album');
