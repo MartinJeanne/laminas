@@ -16,6 +16,7 @@ $artist->setAttribute('placeholder', 'Artist');
 
 $img = $form->get('img');
 $img->setAttribute('class', 'imgForm');
+$img->setAttribute('accept', 'image/png, image/jpg, image/jpeg, image/ico, image/svg');
 
 // This provides CSS classes for the submit button:
 $submit = $form->get('submit');
