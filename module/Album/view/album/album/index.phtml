@@ -9,8 +9,8 @@ $this->headTitle($title);
 
 <table class="table">
     <?php foreach ($albums as $album) : ?>
-        <?php $img = $this->escapeHtml . base64_encode($album->img);
-        if ($img) $img = "data:image/jpeg;base64," . $img;
+        <?php $img = $this->escapeHtml(base64_encode($album->img));
+        if ($img) $img = "data:image/*;base64," . $img;
         else $img = $this->basePath('img/disque.png'); ?>
         <tr>
             <td><img class="albumImg" alt="Img pas trouvé" src="<?= $img ?>" /></td>
