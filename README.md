@@ -1,7 +1,7 @@
 # laminas-mvc-skeleton
 
 ## Hello
-Your php version need to be <7.3 or ~8.0
+Your php version need to be <7.3 but >8.1
 
 Go to your php.ini, and remove the semicolon on this line:  
 `;extension=intl`
