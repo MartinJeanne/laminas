@@ -1,4 +1,6 @@
+DROP DATABASE IF EXISTS laminasmysqlimage;
 CREATE DATABASE laminasmysqlimage;
+USE laminasmysqlimage;
 CREATE TABLE album (
 id INTEGER PRIMARY KEY auto_increment, 
 artist varchar(100) NOT NULL, 
