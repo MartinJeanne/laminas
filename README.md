@@ -12,5 +12,7 @@ Install project with Composer:
 Or with php:  
 `$ php composer.phar install`  
 
+Create the mysql database with the code given in data/schema.sql
+
 Run server:  
 `$ php -S 0.0.0.0:8080 -t public`
